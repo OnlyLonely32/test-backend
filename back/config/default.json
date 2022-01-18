@@ -1,0 +1,5 @@
+{
+  "serverPort" : 5000,
+  "dbUrl": "mongodb+srv://mongodb:root@cluster0.hsbdp.mongodb.net/englihCard?retryWrites=true&w=majority",
+  "secretKey": "mern-secket-key"
+}

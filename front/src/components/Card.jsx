@@ -1,12 +1,16 @@
 import React from 'react'
 import clsx from 'clsx'
 import {CloseOutlined, ExclamationCircleOutlined} from '@ant-design/icons'
-import { Modal } from 'antd';
+import { Modal, message } from 'antd';
 const { confirm } = Modal;
 
 const Card = ({card, selected, index, deleteCard}) => {
   const [flip, setFlit] = React.useState(false)
   const deleteAction = () => {
+    if(!localStorage.getItem("user")){
+      message.error("You not authorized");
+      return 0
+    }
     confirm({
         icon: <ExclamationCircleOutlined />,
         content: "you are shoor wont to delete?",

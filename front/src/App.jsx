@@ -25,10 +25,6 @@ function App() {
   const [user, setUser] = React.useState({});
 
   const deleteCard = async(cardId) => {
-    if(!localStorage.getItem("user")){
-      message.error("You not authorized");
-      return 0
-    }
     try {
       const res = await axios.delete("http://localhost:5000/api/card/" + cardId);
       getCards(currentFolder)
@@ -39,10 +35,6 @@ function App() {
   } 
 
   const deleteFolder = async(folderId) => {
-    if(!localStorage.getItem("user")){
-      message.error("You not authorized");
-      return 0
-    }
     try {
       await axios.delete("http://localhost:5000/api/folder/" + folderId);
       getCards(currentFolder)
@@ -54,10 +46,6 @@ function App() {
   }
 
   const createCard = async(card) => {
-    if(!localStorage.getItem("user")){
-      message.error("You not authorized");
-      return 0
-    }
     try {
       const res = await axios.post("http://localhost:5000/api/card", {
         ...card,
@@ -71,10 +59,6 @@ function App() {
   }
 
   const createFolder = async(folder) => {
-    if(!localStorage.getItem("user")){
-      message.error("You not authorized");
-      return 0
-    }
     try {
       await axios.post("http://localhost:5000/api/folder", folder);
       message.success("Folder was created")

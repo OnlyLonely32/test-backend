@@ -60,11 +60,13 @@
 .next-card {
   transform: translate(50px, 0) rotateY(-15deg);
   opacity: 0;
+  z-index: -1;
 }
 
 .prev-card {
   transform: translate(-50px, 0) rotateY(15deg);
   opacity: 0;
+  z-index: -1;
 }
 
 .slider-nav {
